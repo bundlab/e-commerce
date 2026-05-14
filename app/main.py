@@ -1,10 +1,12 @@
 from kivy.app import App
-from kivy.uix.screenmanager import ScreenManager
-from screens.login import LoginScreen
-from screens.dashboard import DashboardScreen
-from screens.profile import ProfileScreen
-from screens.settings import SettingsScreen
 from kivy.lang import Builder
+from kivy.uix.screenmanager import ScreenManager
+
+from app.screens.login import LoginScreen
+from app.screens.dashboard import DashboardScreen
+from app.screens.profile import ProfileScreen
+from app.screens.settings import SettingsScreen
+
 
 Builder.load_file("ui/login.kv")
 Builder.load_file("ui/dashboard.kv")

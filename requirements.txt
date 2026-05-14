@@ -1,4 +1,4 @@
 kivy
 kivymd
 requests
-sqlite3
+pillow
