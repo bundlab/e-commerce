@@ -1,68 +1,263 @@
 <DashboardScreen>:
 
-    BoxLayout:
+    MDBoxLayout:
         orientation: "vertical"
 
-        # Header
-        BoxLayout:
-            size_hint_y: 0.1
-            padding: 10
-            spacing: 10
+        # =========================
+        # TOP APP BAR
+        # =========================
+        MDTopAppBar:
+            title: "eShop"
+            elevation: 4
 
-            Label:
-                text: "🛒 KivyShop"
-                font_size: 22
-                bold: True
+        # =========================
+        # SEARCH BAR
+        # =========================
+        MDBoxLayout:
+            size_hint_y: None
+            height: "70dp"
+            padding: "10dp"
 
-            Button:
-                text: "Profile"
-                size_hint_x: 0.3
-                on_press: app.root.current = "profile"
+            MDTextField:
+                hint_text: "Search products..."
+                mode: "rectangle"
 
-        # Product List
+        # =========================
+        # CATEGORY SECTION
+        # =========================
+        ScrollView:
+            size_hint_y: None
+            height: "60dp"
+            do_scroll_x: True
+            do_scroll_y: False
+
+            MDBoxLayout:
+                adaptive_width: True
+                spacing: "10dp"
+                padding: "10dp"
+
+                MDChip:
+                    text: "Phones"
+
+                MDChip:
+                    text: "Fashion"
+
+                MDChip:
+                    text: "Electronics"
+
+                MDChip:
+                    text: "Home"
+
+                MDChip:
+                    text: "Gaming"
+
+        # =========================
+        # PRODUCT GRID
+        # =========================
         ScrollView:
 
-            GridLayout:
+            MDGridLayout:
+                id: product_grid
                 cols: 2
-                spacing: 10
-                padding: 10
+                spacing: "12dp"
+                padding: "12dp"
+                adaptive_height: True
                 size_hint_y: None
-                height: self.minimum_height
 
-                Button:
-                    text: "Product 1\n$10"
+                # =====================
+                # PRODUCT CARD 1
+                # =====================
+                MDCard:
+                    orientation: "vertical"
                     size_hint_y: None
-                    height: 150
+                    height: "320dp"
+                    padding: "8dp"
+                    radius: [20]
+                    elevation: 4
 
-                Button:
-                    text: "Product 2\n$15"
+                    AsyncImage:
+                        source: "assets/images/iphone.png"
+                        allow_stretch: True
+                        keep_ratio: True
+                        size_hint_y: 0.65
+
+                    MDLabel:
+                        text: "iPhone 15 Pro"
+                        halign: "center"
+                        bold: True
+                        size_hint_y: None
+                        height: "30dp"
+
+                    MDLabel:
+                        text: "₦999"
+                        halign: "center"
+                        theme_text_color: "Primary"
+                        size_hint_y: None
+                        height: "30dp"
+
+                    Widget:
+
+                    MDRaisedButton:
+                        text: "Add to Cart"
+                        size_hint_y: None
+                        height: "45dp"
+                        pos_hint: {"center_x": 0.5}
+
+                # =====================
+                # PRODUCT CARD 2
+                # =====================
+                MDCard:
+                    orientation: "vertical"
                     size_hint_y: None
-                    height: 150
+                    height: "320dp"
+                    padding: "8dp"
+                    radius: [20]
+                    elevation: 4
 
-                Button:
-                    text: "Product 3\n$20"
+                    AsyncImage:
+                        source: "assets/images/nike.png"
+                        allow_stretch: True
+                        keep_ratio: True
+                        size_hint_y: 0.65
+
+                    MDLabel:
+                        text: "Nike Shoes"
+                        halign: "center"
+                        bold: True
+                        size_hint_y: None
+                        height: "30dp"
+
+                    MDLabel:
+                        text: "₦120"
+                        halign: "center"
+                        theme_text_color: "Primary"
+                        size_hint_y: None
+                        height: "30dp"
+
+                    Widget:
+
+                    MDRaisedButton:
+                        text: "Add to Cart"
+                        size_hint_y: None
+                        height: "45dp"
+                        pos_hint: {"center_x": 0.5}
+
+                # =====================
+                # PRODUCT CARD 3
+                # =====================
+                MDCard:
+                    orientation: "vertical"
                     size_hint_y: None
-                    height: 150
+                    height: "320dp"
+                    padding: "8dp"
+                    radius: [20]
+                    elevation: 4
 
-                Button:
-                    text: "Product 4\n$25"
+                    AsyncImage:
+                        source: "assets/images/tv.png"
+                        allow_stretch: True
+                        keep_ratio: True
+                        size_hint_y: 0.65
+
+                    MDLabel:
+                        text: "Samsung Smart TV"
+                        halign: "center"
+                        bold: True
+                        size_hint_y: None
+                        height: "30dp"
+
+                    MDLabel:
+                        text: "₦450"
+                        halign: "center"
+                        theme_text_color: "Primary"
+                        size_hint_y: None
+                        height: "30dp"
+
+                    Widget:
+
+                    MDRaisedButton:
+                        text: "Add to Cart"
+                        size_hint_y: None
+                        height: "45dp"
+                        pos_hint: {"center_x": 0.5}
+
+                # =====================
+                # PRODUCT CARD 4
+                # =====================
+                MDCard:
+                    orientation: "vertical"
                     size_hint_y: None
-                    height: 150
+                    height: "320dp"
+                    padding: "8dp"
+                    radius: [20]
+                    elevation: 4
 
-        # Bottom Navigation
-        BoxLayout:
-            size_hint_y: 0.1
-            spacing: 10
-            padding: 5
+                    AsyncImage:
+                        source: "assets/images/laptop.png"
+                        allow_stretch: True
+                        keep_ratio: True
+                        size_hint_y: 0.65
 
-            Button:
+                    MDLabel:
+                        text: "Gaming Laptop"
+                        halign: "center"
+                        bold: True
+                        size_hint_y: None
+                        height: "30dp"
+
+                    MDLabel:
+                        text: "₦1500"
+                        halign: "center"
+                        theme_text_color: "Primary"
+                        size_hint_y: None
+                        height: "30dp"
+
+                    Widget:
+
+                    MDRaisedButton:
+                        text: "Add to Cart"
+                        size_hint_y: None
+                        height: "45dp"
+                        pos_hint: {"center_x": 0.5}
+
+        # =========================
+        # BOTTOM NAVIGATION
+        # =========================
+        MDBottomNavigation:
+            panel_color: .95, .95, .95, 1
+
+            MDBottomNavigationItem:
+                name: "home"
                 text: "Home"
-                on_press: app.root.current = "dashboard"
+                icon: "home"
 
-            Button:
+                MDLabel:
+                    text: "Home"
+                    halign: "center"
+
+            MDBottomNavigationItem:
+                name: "cart"
+                text: "Cart"
+                icon: "cart"
+
+                MDLabel:
+                    text: "Cart"
+                    halign: "center"
+
+            MDBottomNavigationItem:
+                name: "profile"
                 text: "Profile"
-                on_press: app.root.current = "profile"
+                icon: "account"
 
-            Button:
+                MDLabel:
+                    text: "Profile"
+                    halign: "center"
+
+            MDBottomNavigationItem:
+                name: "settings"
                 text: "Settings"
-                on_press: app.root.current = "settings"
+                icon: "cog"
+
+                MDLabel:
+                    text: "Settings"
+                    halign: "center"

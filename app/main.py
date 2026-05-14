@@ -1,4 +1,4 @@
-from kivy.app import App
+from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager
 
@@ -8,15 +8,20 @@ from app.screens.profile import ProfileScreen
 from app.screens.settings import SettingsScreen
 
 
-Builder.load_file("ui/login.kv")
-Builder.load_file("ui/dashboard.kv")
-Builder.load_file("ui/profile.kv")
-Builder.load_file("ui/settings.kv")
-Builder.load_file("ui/main.kv")
-
-class EcommerceApp(App):
+class EcommerceApp(MDApp):
 
     def build(self):
+        # ✅ FIRST: theme must be initialized
+        self.theme_cls.primary_palette = "Blue"
+        self.theme_cls.theme_style = "Light"
+
+        # ❗ IMPORTANT: load KV AFTER theme init
+        Builder.load_file("ui/login.kv")
+        Builder.load_file("ui/dashboard.kv")
+        Builder.load_file("ui/profile.kv")
+        Builder.load_file("ui/settings.kv")
+        Builder.load_file("ui/main.kv")
+
         sm = ScreenManager()
 
         sm.add_widget(LoginScreen(name="login"))
