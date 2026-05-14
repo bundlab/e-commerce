@@ -1,0 +1,41 @@
+<SettingsScreen>:
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: 20
+        spacing: 20
+
+        Label:
+            text: "Settings"
+            font_size: 28
+            bold: True
+
+        BoxLayout:
+            orientation: "vertical"
+            spacing: 15
+
+            BoxLayout:
+                Label:
+                    text: "Dark Mode"
+
+                Switch:
+                    active: False
+
+            BoxLayout:
+                Label:
+                    text: "Notifications"
+
+                Switch:
+                    active: True
+
+        Button:
+            text: "Logout"
+            size_hint_y: None
+            height: 50
+            on_press: app.root.current = "login"
+
+        Button:
+            text: "Back"
+            size_hint_y: None
+            height: 50
+            on_press: app.root.current = "dashboard"

@@ -1,0 +1,34 @@
+<ProfileScreen>:
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: 20
+        spacing: 20
+
+        Label:
+            text: "User Profile"
+            font_size: 28
+            bold: True
+
+        BoxLayout:
+            orientation: "vertical"
+            spacing: 10
+
+            Label:
+                text: "Username: user123"
+                font_size: 18
+
+            Label:
+                text: "Email: user@email.com"
+                font_size: 18
+
+        Button:
+            text: "Edit Profile"
+            size_hint_y: None
+            height: 50
+
+        Button:
+            text: "Back to Dashboard"
+            size_hint_y: None
+            height: 50
+            on_press: app.root.current = "dashboard"

@@ -1,0 +1,26 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+build/
+dist/
+*.spec
+
+# Buildozer
+.buildozer/
+bin/
+
+# Android
+*.apk
+*.aab
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

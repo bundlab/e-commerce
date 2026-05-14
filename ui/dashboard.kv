@@ -1,0 +1,68 @@
+<DashboardScreen>:
+
+    BoxLayout:
+        orientation: "vertical"
+
+        # Header
+        BoxLayout:
+            size_hint_y: 0.1
+            padding: 10
+            spacing: 10
+
+            Label:
+                text: "🛒 KivyShop"
+                font_size: 22
+                bold: True
+
+            Button:
+                text: "Profile"
+                size_hint_x: 0.3
+                on_press: app.root.current = "profile"
+
+        # Product List
+        ScrollView:
+
+            GridLayout:
+                cols: 2
+                spacing: 10
+                padding: 10
+                size_hint_y: None
+                height: self.minimum_height
+
+                Button:
+                    text: "Product 1\n$10"
+                    size_hint_y: None
+                    height: 150
+
+                Button:
+                    text: "Product 2\n$15"
+                    size_hint_y: None
+                    height: 150
+
+                Button:
+                    text: "Product 3\n$20"
+                    size_hint_y: None
+                    height: 150
+
+                Button:
+                    text: "Product 4\n$25"
+                    size_hint_y: None
+                    height: 150
+
+        # Bottom Navigation
+        BoxLayout:
+            size_hint_y: 0.1
+            spacing: 10
+            padding: 5
+
+            Button:
+                text: "Home"
+                on_press: app.root.current = "dashboard"
+
+            Button:
+                text: "Profile"
+                on_press: app.root.current = "profile"
+
+            Button:
+                text: "Settings"
+                on_press: app.root.current = "settings"
